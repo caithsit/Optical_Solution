@@ -1,138 +1,73 @@
 <apex:page standardController="Prescription__c">
-  <apex:sectionHeader title="PRESCRIPTION" subtitle="Patient Prescription"/>
-  <apex:form >
+    <apex:sectionHeader title="PRESCRIPTION" subtitle="Patient Prescription"/>
+    <apex:form >
 
-      <apex:pageBlock id="pageBlockOne" mode="edit">
+        <apex:pageBlock id="pageBlockOne" mode="edit">
         <apex:pageMessages />
 
-        <apex:pageBlockButtons location="top">
-            <apex:commandButton value="Save" action="{!save}"/>
-            <apex:commandButton value="Cancel" action="{!cancel}"/>
-        </apex:pageBlockButtons>
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
         
-        <apex:pageBlockSection title="Prescription" columns="5" collapsible="false">
-            <apex:inputField label="Patient" value="{!Prescription__c.Account_to_rx__c}"/>
-            <apex:inputField label="Duplicate Perscription" value="{!Prescription__c.Duplicate_Perscription__c}"/>
-            <apex:inputField value="{!Prescription__c.Doctor_to_rx__c}"/>
-            <apex:inputField value="{!Prescription__c.Exam_Date__c}"/>
-            <apex:inputField value="{!Prescription__c.Expiration_Date__c}"/>
-        </apex:pageBlockSection>
-        
-
-         <table width="900" cellpadding="5" cellspacing="1" >
-            <tr>
-                <td colspan="3" align="right"> OD-Right-Sphere </td>
-                <td colspan="3" align="left"> <apex:inputField label="OD-Right-Sphere" value="{!Prescription__c.OD_Sph__c}"/> </td>
-                <td colspan="3" align="right"> Cylinder </td>
-                <td colspan="3" align="left"> <apex:inputField label="Cylinder" value="{!Prescription__c.OD_Cyl__c}"/> </td>
-                <td colspan="3" align="right"> Axis </td>
-                <td colspan="3" align="left"> <apex:inputField label="Axis" value="{!Prescription__c.OD_Axis__c}"/> </td>
-                <td colspan="3" align="right"> Add </td>
-                <td colspan="3" align="left"> <apex:inputField label="Add" value="{!Prescription__c.OD_Add__c}"/> </td>
-            </tr>
-            <tr>
-                <td colspan="3" align="right"> OS-Right-Sphere </td>
-                <td colspan="3" align="left"> <apex:inputField label="OS-Right-Sphere" value="{!Prescription__c.OS_Sph__c}"/> </td>
-                <td colspan="3" align="right"> Cylinder </td>
-                <td colspan="3" align="left"> <apex:inputField label="Cylinder" value="{!Prescription__c.OS_Cyl__c}"/> </td>
-                <td colspan="3" align="right"> Axis </td>
-                <td colspan="3" align="left"> <apex:inputField label="Axis" value="{!Prescription__c.OS_Axis__c}"/> </td>
-                <td colspan="3" align="right"> Add </td>
-                <td colspan="3" align="left"> <apex:inputField label="Add" value="{!Prescription__c.OS_Add__c}"/> </td>
-            </tr>
-        </table>
-        
-    </apex:pageBlock>
-    <apex:pageBlock id="pageBlockTwo" mode="edit">
-        <apex:pageBlockButtons location="bottom">
-            <apex:commandButton value="Save" action="{!save}"/>
-            <apex:commandButton value="Cancel" action="{!cancel}"/>
-        </apex:pageBlockButtons>
-
-        <apex:actionRegion>
-            <apex:pageBlockSection title="Prism values" columns="1">
-                <apex:pageBlockSectionItem>
-                    <apex:outputLabel value="Prism Values" />
-                    <apex:outputPanel>
-                        <apex:inputCheckbox value="{!Prescription__c.Prism_Values__c}">
-                            <apex:actionSupport event="onchange" reRender="pageBlockTwo" status="status">
-                            </apex:actionSupport>
-                        </apex:inputCheckbox>
-                        <apex:actionStatus startText="applying value ..." id="status" />
-                    </apex:outputPanel>
-                </apex:pageBlockSectionItem>
+            <apex:pageBlockSection title="Prescription" columns="5" collapsible="false">
+                <apex:inputField label="Patient" value="{!Prescription__c.Account_to_rx__c}"/>
+                <apex:inputField label="Duplicate Perscription" value="{!Prescription__c.Duplicate_Perscription__c}"/>
+               <apex:inputField value="{!Prescription__c.Doctor_to_rx__c}"/>
+                <apex:inputField value="{!Prescription__c.Exam_Date__c}"/>
+                <apex:inputField value="{!Prescription__c.Expiration_Date__c}"/>
             </apex:pageBlockSection>
-        </apex:actionRegion>
-
-        <apex:pageBlockSection title="" id="PageBlockCHANGE1" columns="2" rendered="{!Prescription__c.Prism_Values__c}">
-            <apex:inputField label="OD-Right-Prism-Value" value="{!Prescription__c.OD_Prism__c}"/>
-            <apex:inputField label="Base Direction" value="{!Prescription__c.OD_Base_Direction__c}"/> 
-            <apex:inputField label="OS-Left-Prism-Value" value="{!Prescription__c.OS_Prism__c}"/>
-            <apex:inputField label="Base Direction" value="{!Prescription__c.OS_Base_Direction__c}"/> 
-        </apex:pageBlockSection>
-
         
-        <!-- let's try this again TO DELETE
-            <apex:actionRegion >
-                <apex:pageBlockSection title="Case Information" columns="1">
-                    <apex:inputField value="{!Case.Subject}"/>
-                    <apex:pageBlockSectionItem >
-                        <apex:outputLabel value="Type"/>
-                        <apex:outputPanel >
-                            <apex:inputField value="{!Case.Type}">
-                                <apex:actionSupport event="onchange" rerender="thePageBlock"
-                                                    status="status"/>
-                            </apex:inputField>
-                            <apex:actionStatus startText="applying value..." id="status"/>
+        
+            <apex:pageBlockSection> </apex:pageBlockSection>
+                <apex:panelGrid columns="8" id="theGrid" cellspacing="10" width="80%">
+                    <apex:outputLabel value="OD-Right-Sphere" />
+                    <apex:inputField label="OD-Right-Sphere" value="{!Prescription__c.OD_Sph__c}"/>
+                    <apex:outputLabel value="Cylinder" />
+                    <apex:inputField label="Cylinder" value="{!Prescription__c.OD_Cyl__c}"/>
+                    <apex:outputLabel value="Axis"/>
+                    <apex:inputField label="Axis" value="{!Prescription__c.OD_Axis__c}"/>
+                    <apex:outputLabel value="Add"/>
+                    <apex:inputField label="Add" value="{!Prescription__c.OD_Add__c}"/>
+                
+                    <apex:outputLabel value="OS-Right-Sphere"/>
+                    <apex:inputField label="OS-Right-Sphere" value="{!Prescription__c.OS_Sph__c}"/>
+                    <apex:outputLabel value="Cylinder" />
+                    <apex:inputField label="Cylinder" value="{!Prescription__c.OS_Cyl__c}"/>
+                    <apex:outputLabel value="Axis" />
+                    <apex:inputField label="Axis" value="{!Prescription__c.OS_Axis__c}"/>
+                    <apex:outputLabel value="Add"/>
+                    <apex:inputField label="Add" value="{!Prescription__c.OS_Add__c}"/>
+                </apex:panelGrid>
+            </apex:pageBlock>
+
+            <apex:pageBlock id="pageBlockTwo" mode="edit">
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="Save" action="{!save}"/>
+                    <apex:commandButton value="Cancel" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+
+                <apex:actionRegion>
+                    <apex:pageBlockSection title="Prism values" columns="1">
+                        <apex:pageBlockSectionItem>
+                        <apex:outputLabel value="Prism Values" />
+                        <apex:outputPanel>
+                            <apex:inputCheckbox value="{!Prescription__c.Prism_Values__c}">
+                                <apex:actionSupport event="onchange" reRender="pageBlockTwo" status="status">
+                                </apex:actionSupport>
+                            </apex:inputCheckbox>
+                            <apex:actionStatus startText="Prism Values" id="status" />
                         </apex:outputPanel>
                     </apex:pageBlockSectionItem>
-                    <apex:inputField value="{!Case.Status}"/>
-                    <apex:inputField value="{!Case.Origin}"/>
-                    <apex:inputField value="{!Case.Description}"/>
                 </apex:pageBlockSection>
             </apex:actionRegion>
-            <apex:pageBlockSection title="Electronic Problem Detail" columns="1"
-                                   rendered="{!Case.Type == 'Electronic'}">
-                <apex:inputField value="{!Case.Bug_Number__c}" required="true"/>
-                <apex:inputField value="{!Case.Replacement_Needed__c}"/>
-            </apex:pageBlockSection>
-        -->
-        
-        
-        
-        <!--
-        <apex:pageBlockSection columns="6" collapsible="false">     
-            <apex:inputField label="OD-Right-Sphere" value="{!Prescription__c.OD_Sph__c}"/>
-            <apex:inputField label="Cylinder" value="{!Prescription__c.OD_Cyl__c}"/>
-            <apex:inputField label="Axis" value="{!Prescription__c.OD_Axis__c}"/>
-            <apex:inputField label="Add" value="{!Prescription__c.OD_Add__c}"/>
-            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
-            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
-        
-            <apex:inputField label="OS-Left-Sphere" value="{!Prescription__c.OS_Sph__c}"/>
-            <apex:inputField label="Cylinder" value="{!Prescription__c.OS_Cyl__c}"/>
-            <apex:inputField label="Axis" value="{!Prescription__c.OS_Axis__c}"/>
-            <apex:inputField label="Add" value="{!Prescription__c.OS_Add__c}"/>
-            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
-            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
-        </apex:pageBlockSection>
-        
-        -->
-        
-           <!-- CT old code    
-            <table width="900" cellpadding="5" cellspacing="1" >
-                <tr>
-                    <td colspan="3" align="right"> OD-Right-Prism </td>
-                    <td colspan="3" align="left"> <apex:inputField label="OD-Right-Prism-Value" value="{!Prescription__c.OD_Prism__c}"/> </td>
-                    <td colspan="3" align="right"> OD-Base-Direction </td>
-                    <td colspan="3" align="left"> <apex:inputField label="Base Direction" value="{!Prescription__c.OD_Base_Direction__c}"/> </td>
-                    <td colspan="3" align="right"> OS-Left-Prism </td>
-                    <td colspan="3" align="left">  <apex:inputField label="OS-Left-Prism-Value" value="{!Prescription__c.OS_Prism__c}"/> </td>
-                    <td colspan="3" align="right"> OS-Base-Direction </td>
-                    <td colspan="3" align="left"> <apex:inputField label="Base Direction" value="{!Prescription__c.OS_Base_Direction__c}"/>   </td>
-                </tr>
-            </table>
-        -->
-      </apex:pageBlock>
-   </apex:form>
+
+            <apex:pageBlockSection title="" id="PageBlockCHANGE1" columns="2" rendered="{!Prescription__c.Prism_Values__c}">
+                <apex:inputField label="OD-Right-Prism-Value" value="{!Prescription__c.OD_Prism__c}"/>
+                <apex:inputField label="Base Direction" value="{!Prescription__c.OD_Base_Direction__c}"/> 
+                <apex:inputField label="OS-Left-Prism-Value" value="{!Prescription__c.OS_Prism__c}"/>
+                <apex:inputField label="Base Direction" value="{!Prescription__c.OS_Base_Direction__c}"/> 
+            </apex:pageBlockSection>           
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>
