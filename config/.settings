@@ -1,0 +1,19 @@
+{
+    "username": "ctorres@88demo.com", 
+    "environment": "developer", 
+    "project_name": "Optical Solution", 
+    "workspace": "/Users/cris/Documents/MavensMate/", 
+    "org_url": "", 
+    "namespace": "", 
+    "id": "2GAP645APVI9WILJFV2EZ2NLOBEPLKEN", 
+    "metadata_container": "1dcj0000000X29DAAS", 
+    "subscription": [
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "StaticResource", 
+        "CustomObject", 
+        "Profile"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "glasses.resource": {
+        "createdById": "005j000000Aw6fmAAB", 
+        "createdByName": "Ben Burdick", 
+        "createdDate": "2014-11-26 18:16:59", 
+        "fileName": "unpackaged/staticresources/glasses.resource", 
+        "fullName": "glasses", 
+        "id": "081j0000000M5nDAAS", 
+        "lastModifiedById": "005j000000Aw6fmAAB", 
+        "lastModifiedByName": "Ben Burdick", 
+        "lastModifiedDate": "2014-11-26 18:16:59", 
+        "mmState": "clean", 
+        "type": "StaticResource"
+    }, 
+    "perscription.page": {
+        "createdById": "005j000000Aw6fmAAB", 
+        "createdByName": "Ben Burdick", 
+        "createdDate": "2014-11-29 08:05:03", 
+        "fileName": "unpackaged/pages/perscription.page", 
+        "fullName": "perscription", 
+        "id": "066j0000000uVWiAAM", 
+        "lastModifiedById": "005j000000BWq1CAAT", 
+        "lastModifiedByName": "Cristian Torres", 
+        "lastModifiedDate": "2015-01-29 11:53:22", 
+        "mmState": "clean", 
+        "type": "ApexPage"
+    }
+}
